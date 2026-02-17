@@ -1,1 +1,28 @@
-// Add JS here
+const generateBtn = document.getElementById('generate-btn');
+const numbersContainer = document.getElementById('numbers-container');
+const bonusContainer = document.getElementById('bonus-container');
+
+generateBtn.addEventListener('click', () => {
+    numbersContainer.innerHTML = '';
+    bonusContainer.innerHTML = '';
+    const numbers = new Set();
+    while (numbers.size < 7) {
+        const randomNumber = Math.floor(Math.random() * 45) + 1;
+        numbers.add(randomNumber);
+    }
+
+    const sortedNumbers = Array.from(numbers).sort((a, b) => a - b);
+    const bonusNumber = sortedNumbers.pop();
+
+    sortedNumbers.forEach(number => {
+        const ball = document.createElement('div');
+        ball.classList.add('number-ball');
+        ball.textContent = number;
+        numbersContainer.appendChild(ball);
+    });
+
+    const bonusBall = document.createElement('div');
+    bonusBall.classList.add('number-ball', 'bonus-ball');
+    bonusBall.textContent = bonusNumber;
+    bonusContainer.appendChild(bonusBall);
+});
