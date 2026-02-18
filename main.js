@@ -1,6 +1,7 @@
 const generateBtn = document.getElementById('generate-btn');
 const numbersContainer = document.getElementById('numbers-container');
 const bonusContainer = document.getElementById('bonus-container');
+const themeToggleBtn = document.getElementById('theme-toggle-btn');
 
 generateBtn.addEventListener('click', () => {
     numbersContainer.innerHTML = '';
@@ -25,4 +26,13 @@ generateBtn.addEventListener('click', () => {
     bonusBall.classList.add('number-ball', 'bonus-ball');
     bonusBall.textContent = bonusNumber;
     bonusContainer.appendChild(bonusBall);
+});
+
+themeToggleBtn.addEventListener('click', () => {
+    document.body.classList.toggle('dark-mode');
+    if (document.body.classList.contains('dark-mode')) {
+        themeToggleBtn.textContent = '🌙';
+    } else {
+        themeToggleBtn.textContent = '☀️';
+    }
 });
