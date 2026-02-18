@@ -87,6 +87,8 @@ body.dark-mode h1 {
 .bonus-ball::before {
     content: '+';
     margin-right: 5px;
+    font-size: 1.2em; /* Increase font size of the plus sign */
+    font-weight: bold;
 }
 
 .number-ball {
@@ -129,7 +131,7 @@ body.dark-mode h1 {
 .number-ball:nth-child(6) { background-color: #1abc9c; animation-delay: 0.6s; }
 
 .bonus-ball {
-    background-color: #7f8c8d !important;
+    background-color: #ff5722 !important; /* A more vibrant color for bonus ball */
 }
 
 #theme-toggle-btn {
